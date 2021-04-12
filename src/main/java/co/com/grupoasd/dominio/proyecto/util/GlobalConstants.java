@@ -26,14 +26,6 @@ public final class GlobalConstants {
         
     }
     /**
-     * Identificador del perfil en modo produccion.
-     */
-    public static final String PROFILE_PROD = "prod";
-    /**
-     * Identificador del perfil en modo desarrollo.
-     */
-    public static final String PROFILE_DEV = "dev";
-    /**
      * Cabecera de QOS para perfil de produccion.
      */
     public static final String HEADER_QOS_PROD = "qos";

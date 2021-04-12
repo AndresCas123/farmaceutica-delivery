@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "9a29e997-6782-4bad-8e74-ddf61f5ec348",
+		"name": "farmaceutica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delivery - create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": \"11001\",\r\n    \"destination\": \"11001\",\r\n    \"weight\": \"50\",\r\n    \"volume\": \"100\",\r\n    \"client\": \"client1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmaceutica",
+						"api",
+						"v1",
+						"deliveries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth - login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"username\": \"jcastellanos\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/farmaceutica/api/v1/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmaceutica",
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delivery - list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmaceutica",
+						"api",
+						"v1",
+						"deliveries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delivery - get ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries/b8dc9666ee774fe186eca226c1e92d55",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmaceutica",
+						"api",
+						"v1",
+						"deliveries",
+						"b8dc9666ee774fe186eca226c1e92d55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delivery quotes - create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": \"30\",\r\n    \"supplier\": \"proveedor3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries/b8dc9666ee774fe186eca226c1e92d55/quotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmaceutica",
+						"api",
+						"v1",
+						"deliveries",
+						"b8dc9666ee774fe186eca226c1e92d55",
+						"quotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delivery quotes - list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries/b8dc9666ee774fe186eca226c1e92d55/quotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmaceutica",
+						"api",
+						"v1",
+						"deliveries",
+						"b8dc9666ee774fe186eca226c1e92d55",
+						"quotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delivery quotes - winner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries/b8dc9666ee774fe186eca226c1e92d55/quotes/115cd0688c7d43aea4acf3edcd27e83c/winner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"farmaceutica",
+						"api",
+						"v1",
+						"deliveries",
+						"b8dc9666ee774fe186eca226c1e92d55",
+						"quotes",
+						"115cd0688c7d43aea4acf3edcd27e83c",
+						"winner"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
