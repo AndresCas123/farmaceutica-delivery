@@ -61,7 +61,7 @@ public class DeliveryServiceImpl implements DeliveryService {
                     if(quotation.getId() == null) {
                         quotation.setId(IdUtil.generate());
                     }
-                    quotation.setDate(DateTimeUtil.now());
+                    quotation.setCreatedAt(DateTimeUtil.now());
                     quotation.setDelivery(delivery);
                     quotation.setPrice(quotationRequest.getPrice());
                     quotation.setSupplier(quotationRequest.getSupplier());
