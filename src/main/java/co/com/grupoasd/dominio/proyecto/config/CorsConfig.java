@@ -27,12 +27,6 @@ import co.com.grupoasd.dominio.proyecto.util.GlobalConstants;
 public class CorsConfig implements WebMvcConfigurer {
     
     /**
-     * Perfil de entorno de la aplicacion.
-     */
-    @Value("${spring.profiles.active}")
-    private String activeProfile;
-    
-    /**
      * Permite habilitar el CORS desde cualquier origen en enterno de desarrollo. 
      * En entorno productivo el CORS debe ser manejado por el API Gateway.
      * @param registry CorsRegistry.
@@ -40,9 +34,7 @@ public class CorsConfig implements WebMvcConfigurer {
      */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        if (GlobalConstants.PROFILE_DEV.equals(activeProfile)) {
-            registry.addMapping("/**");
-        }   
+        registry.addMapping("/**");
     }
     
 }

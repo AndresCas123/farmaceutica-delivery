@@ -30,12 +30,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SpringFoxConfig {
-    
-    /**
-     * Perfil de entorno de la aplicacion.
-     */
-    @Value("${spring.profiles.active}")
-    private String activeProfile;
 
     /**
      * Se habilita Spring Fox.
@@ -43,20 +37,11 @@ public class SpringFoxConfig {
      */
     @Bean
     public Docket api() { 
-        if (GlobalConstants.PROFILE_DEV.equals(activeProfile)) {
-            // En modo desarrollo se expone el swagger
-            return new Docket(DocumentationType.SWAGGER_2)  
-              .select()                                  
-              .apis(RequestHandlerSelectors.any())              
-              .paths(PathSelectors.any())                          
-              .build();                                           
-        } else {
-            // En modo produccion se oculta el swagger
-            return new Docket(DocumentationType.SWAGGER_2)  
-                .select()                                  
-                .apis(RequestHandlerSelectors.none())              
-                .paths(PathSelectors.none())                          
-                .build();    
-        }
+        // En modo desarrollo se expone el swagger
+        return new Docket(DocumentationType.SWAGGER_2)
+          .select()
+          .apis(RequestHandlerSelectors.any())
+          .paths(PathSelectors.any())
+          .build();
     }
 }
