@@ -5,8 +5,6 @@ import co.edu.javeriana.farmaceutica.delivery.entity.Quotation;
 import co.edu.javeriana.farmaceutica.delivery.exception.BadRequestException;
 import co.edu.javeriana.farmaceutica.delivery.message.CreateDeliveryRequest;
 import co.edu.javeriana.farmaceutica.delivery.message.QuotationRequest;
-import co.edu.javeriana.farmaceutica.delivery.repository.CiudadRepository;
-import co.edu.javeriana.farmaceutica.delivery.repository.ClienteRepository;
 import co.edu.javeriana.farmaceutica.delivery.repository.DeliveryRepository;
 import co.edu.javeriana.farmaceutica.delivery.repository.QuotationRepository;
 import co.edu.javeriana.farmaceutica.delivery.service.DeliveryService;
@@ -23,8 +21,6 @@ import java.util.Optional;
 public class DeliveryServiceImpl implements DeliveryService {
 
     private final DeliveryRepository deliveryRepository;
-    private final CiudadRepository ciudadRepository;
-    private final ClienteRepository clienteRepository;
     private final QuotationRepository quotationRepository;
 
     @Override
