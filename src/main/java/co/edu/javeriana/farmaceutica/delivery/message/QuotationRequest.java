@@ -10,4 +10,7 @@ public class QuotationRequest {
 
     @ApiModelProperty(name = "supplier", notes = "Código de identificación del proveedor", required=true)
     private String supplier;
+
+    @ApiModelProperty(name = "supplierName", notes = "Nombre del proveedor", required=false)
+    private String supplierName;
 }

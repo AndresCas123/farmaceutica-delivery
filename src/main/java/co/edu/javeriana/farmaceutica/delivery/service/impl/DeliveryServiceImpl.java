@@ -63,6 +63,7 @@ public class DeliveryServiceImpl implements DeliveryService {
                     quotation.setDelivery(delivery);
                     quotation.setPrice(quotationRequest.getPrice());
                     quotation.setSupplier(quotationRequest.getSupplier());
+                    quotation.setSupplierName(quotationRequest.getSupplierName());
                     return quotationRepository.save(quotation);
                 })
                 .map(quotation -> {

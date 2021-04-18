@@ -24,6 +24,10 @@ public class Quotation {
     @Column(nullable = false, length = 64)
     private String supplier;
 
+    @ApiModelProperty(name = "supplierName", notes = "Nombre del proveedor de la cotización", required=false)
+    @Column(nullable = false, length = 100)
+    private String supplierName;
+
     @ApiModelProperty(name = "price", notes = "Valor del despacho", required=false)
     @Column(nullable = false)
     private Double price;
