@@ -98,7 +98,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"price\": \"30\",\r\n    \"supplier\": \"proveedor3\"\r\n}",
+					"raw": "{\r\n    \"price\": \"30\",\r\n    \"supplier\": \"proveedor3\",\r\n    \"supplierName\": \"Proveedor Numero 3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -106,7 +106,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries/b8dc9666ee774fe186eca226c1e92d55/quotes",
+					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries/66b105db8ec7486f95ac6b00d6d94830/quotes",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -117,7 +117,7 @@
 						"api",
 						"v1",
 						"deliveries",
-						"b8dc9666ee774fe186eca226c1e92d55",
+						"66b105db8ec7486f95ac6b00d6d94830",
 						"quotes"
 					]
 				}
@@ -130,7 +130,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries/b8dc9666ee774fe186eca226c1e92d55/quotes",
+					"raw": "http://localhost:8080/farmaceutica/api/v1/deliveries/66b105db8ec7486f95ac6b00d6d94830/quotes",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -141,7 +141,7 @@
 						"api",
 						"v1",
 						"deliveries",
-						"b8dc9666ee774fe186eca226c1e92d55",
+						"66b105db8ec7486f95ac6b00d6d94830",
 						"quotes"
 					]
 				}
