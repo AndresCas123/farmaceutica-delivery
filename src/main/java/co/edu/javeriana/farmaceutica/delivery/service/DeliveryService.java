@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface DeliveryService {
     Delivery create(CreateDeliveryRequest createDeliveryRequest);
     Optional<Delivery> get(String id);
-    List<Delivery> list();
+    List<Delivery> list(String clientId, String state);
     Quotation quotationCreate(String deliveryId, QuotationRequest quotationRequest);
     List<Quotation> quotes(String deliveryId);
     Quotation quotationWinner(String quotationId);

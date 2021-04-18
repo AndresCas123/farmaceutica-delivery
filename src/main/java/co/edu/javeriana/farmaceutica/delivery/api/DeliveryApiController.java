@@ -42,8 +42,8 @@ public class DeliveryApiController {
 
     @ApiOperation(value = "Lista todos los despachos.",
             nickname = "list",
-            notes = "Permite listar los despachos disponibles. Se encuentra pendiente agregar un filtro " +
-                    "para poder filtrar los despachos que se encuentran en estado quotation es decir bajo cotización.",
+            notes = "Permite listar los despachos disponibles. Se puede filtrar por el identificador del cliente y por el estado " +
+                    "del despacho. Si no se envía filtro retorna todos los despachos.",
             tags = { "deliveries" })
     @ApiResponses(value = {
             @ApiResponse(
@@ -52,9 +52,10 @@ public class DeliveryApiController {
         }
     )
     @GetMapping
-    public ResponseEntity<?> list() {
+    public ResponseEntity<?> list(@ApiParam(value = "Identificador del cliente", required = false) @RequestParam(required = false) String client,
+                                  @ApiParam(value = "Estado del despacho", required = false) @RequestParam(required = false) String state) {
         LogTrace.trace(log);
-        return new ResponseEntity<>(deliveryService.list(), HttpStatus.OK);
+        return new ResponseEntity<>(deliveryService.list(client, state), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Retorna un despacho.",

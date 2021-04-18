@@ -29,9 +29,17 @@ public class Delivery {
     @Column(nullable = false, length = 5)
     private String source;
 
+    @ApiModelProperty(name = "sourceName", notes = "Nombre de la ciudad de origen del despacho", required=true , example="11001")
+    @Column(nullable = true, length = 70)
+    private String sourceName;
+
     @ApiModelProperty(name = "destination", notes = "Código de la ciudad de destino del despacho", required=true , example="11001")
     @Column(nullable = false, length = 5)
     private String destination;
+
+    @ApiModelProperty(name = "destinationName", notes = "Nombre de la ciudad de destino del despacho", required=true , example="11001")
+    @Column(nullable = true, length = 70)
+    private String destinationName;
 
     @ApiModelProperty(name = "weight", notes = "Peso en kilogramos de la mercancia", required=true)
     @Column(nullable = false)

@@ -30,7 +30,9 @@ public class DeliveryServiceImpl implements DeliveryService {
         delivery.setCreatedAt(DateTimeUtil.now());
         delivery.setState(GlobalConstants.DELIVERY_STATE_QUOTATION);
         delivery.setSource(createDeliveryRequest.getSource());
+        delivery.setSourceName(createDeliveryRequest.getSourceName());
         delivery.setDestination(createDeliveryRequest.getDestination());
+        delivery.setDestinationName(createDeliveryRequest.getDestinationName());
         delivery.setWeight(createDeliveryRequest.getWeight());
         delivery.setVolume(createDeliveryRequest.getVolume());
         delivery.setClient(createDeliveryRequest.getClient());
@@ -43,8 +45,8 @@ public class DeliveryServiceImpl implements DeliveryService {
     }
 
     @Override
-    public List<Delivery> list() {
-        return deliveryRepository.findAll();
+    public List<Delivery> list(String clientId, String state) {
+        return deliveryRepository.findDeliveriesByClientAndState(clientId, state);
     }
 
     @Override
