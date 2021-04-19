@@ -1,8 +1,10 @@
 package co.edu.javeriana.farmaceutica.delivery.service.impl;
 
+import co.edu.javeriana.farmaceutica.delivery.client.ClientClientService;
 import co.edu.javeriana.farmaceutica.delivery.entity.Delivery;
 import co.edu.javeriana.farmaceutica.delivery.entity.Quotation;
 import co.edu.javeriana.farmaceutica.delivery.exception.BadRequestException;
+import co.edu.javeriana.farmaceutica.delivery.message.ClientResponse;
 import co.edu.javeriana.farmaceutica.delivery.message.CreateDeliveryRequest;
 import co.edu.javeriana.farmaceutica.delivery.message.QuotationRequest;
 import co.edu.javeriana.farmaceutica.delivery.repository.DeliveryRepository;
@@ -16,8 +18,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.mail.MessagingException;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +29,7 @@ public class DeliveryServiceImpl implements DeliveryService {
     private final DeliveryRepository deliveryRepository;
     private final QuotationRepository quotationRepository;
     private final MailService mailService;
+    private final ClientClientService clientClientService;
 
     @Override
     public Delivery create(CreateDeliveryRequest createDeliveryRequest) {
@@ -77,14 +78,15 @@ public class DeliveryServiceImpl implements DeliveryService {
                 })
                 .map(quotation -> {
                     if(quotationRepository.countByDeliveryId(deliveryId) >= 3) {
-                        // Envio de correo
                         try {
-                            mailService.send("juancastellanosm@gmail.com",
+                            ClientResponse client = clientClientService.get(deliveryRepository.findById(deliveryId).get().getClient());
+                            mailService.send(client.getEmail(),
                                     "Farmacéutica La Javeriana - Cotizaciones de despacho", getMailContent(deliveryId));
-                        } catch(MessagingException ex) {
+                            log.info("Correo enviado satisfactoriamente");
+                        } catch(Exception ex) {
                             log.error(ex.getMessage(), ex);
                         }
-                        log.info("Envio de correo");
+
                     }
                     return quotation;
                 })
