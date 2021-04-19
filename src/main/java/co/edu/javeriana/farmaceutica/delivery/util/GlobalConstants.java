@@ -33,4 +33,7 @@ public final class GlobalConstants {
 
     public static final String DELIVERY_STATE_QUOTATION = "quotation";
     public static final String DELIVERY_SATE_ASSIGNED = "assigned";
+    public static final String QUOTATION_SATE_QUOTATION = "quotation";
+    public static final String QUOTATION_SATE_WINNER = "winner";
+    public static final String QUOTATION_SATE_LOSER = "loser";
 }

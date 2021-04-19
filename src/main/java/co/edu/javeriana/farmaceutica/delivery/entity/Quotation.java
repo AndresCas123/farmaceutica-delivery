@@ -35,4 +35,11 @@ public class Quotation {
     @ApiModelProperty(name = "delivery", notes = "Despacho cotizado", required=false)
     @ManyToOne(optional = false)
     private Delivery delivery;
+
+    @ApiModelProperty(name = "state", notes = "Estado de la cotización. Estados posibles: " +
+            "\n\nquotation: La cotización se encuentra en proceso de revisión por parte del cliente." +
+            "\n\nwinner: La cotización fue seleccionada como ganadora por parte del cliente." +
+            "\n\nloser: La cotización no fue seleccionada por el cliente por lo cual fue perdedora.", required=true)
+    @Column(nullable = false, length = 10)
+    private String state;
 }

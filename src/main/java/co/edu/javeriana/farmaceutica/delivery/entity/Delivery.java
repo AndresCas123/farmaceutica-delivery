@@ -56,4 +56,8 @@ public class Delivery {
     @ApiModelProperty(name = "quotation", notes = "Código de la cotización del proveedor ganador.", required=false)
     @Column(nullable = true, length = 64)
     private String quotation;
+
+    @ApiModelProperty(name = "description", notes = "Descripción del despacho", required=true)
+    @Column(nullable = true, length = 300)
+    private String description;
 }

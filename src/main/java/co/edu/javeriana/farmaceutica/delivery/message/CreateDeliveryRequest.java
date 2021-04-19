@@ -5,6 +5,9 @@ import lombok.Data;
 
 @Data
 public class CreateDeliveryRequest {
+    @ApiModelProperty(name = "description", notes = "Descripción del despacho", required=true)
+    private String description;
+
     @ApiModelProperty(name = "source", notes = "Código de la ciudad de origen del despacho", required=true , example="11001")
     private String source;
 
